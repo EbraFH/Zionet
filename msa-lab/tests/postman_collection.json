@@ -2,7 +2,7 @@
   "info": {
     "name": "Microservices Lab",
     "_postman_id": "unique-id",
-    "description": "Collection for testing Service A and Service B",
+    "description": "Collection for testing Service A, Service B, and Service C",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
