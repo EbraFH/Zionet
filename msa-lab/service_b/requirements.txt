@@ -1,0 +1,2 @@
+# service_b/requirements.txt
+Flask==2.1.2
