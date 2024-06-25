@@ -5,7 +5,7 @@ def test_service_a():
     url = 'http://localhost:5000/service_a'
     response = requests.post(url, json={"value": 5})
     assert response.status_code == 200
-    assert response.json() == {"processed_value": 10}
+    assert response.json() == {"processed_value_b": 10, "processed_value_c": 15}
 
 if __name__ == '__main__':
     test_service_a()
