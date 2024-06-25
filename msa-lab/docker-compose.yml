@@ -1,0 +1,42 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  service_a:
+    build: ./service_a
+    ports:
+      - "5000:5000"
+    depends_on:
+      - service_b
+      - service_c
+    networks:
+      - microservices-network
+
+  service_b:
+    build: ./service_b
+    ports:
+      - "5001:5001"
+    networks:
+      - microservices-network
+
+  service_c:
+    build: ./service_c
+    ports:
+      - "5002:5002"
+    networks:
+      - microservices-network
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: microservices_db
+    ports:
+      - "5432:5432"
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge
