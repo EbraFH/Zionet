@@ -1,6 +1,10 @@
 # service_a/app.py
 from flask import Flask, request, jsonify
 import requests
+import ptvsd
+ptvsd.enable_attach(address=('0.0.0.0', 5678), redirect_output=True)
+ptvsd.wait_for_attach()
+
 
 app = Flask(__name__)
 

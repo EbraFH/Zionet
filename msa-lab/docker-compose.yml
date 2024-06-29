@@ -6,6 +6,7 @@ services:
     build: ./service_a
     ports:
       - "5000:5000"
+      - "5678:5678"
     depends_on:
       - service_b
       - service_c
@@ -16,6 +17,7 @@ services:
     build: ./service_b
     ports:
       - "5001:5001"
+      - "5678:5678"
     networks:
       - microservices-network
 
@@ -23,6 +25,7 @@ services:
     build: ./service_c
     ports:
       - "5002:5002"
+      - "5678:5678"
     networks:
       - microservices-network
 
